@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63222DB5241B1A3C00086C35 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63222DB3241B1A3C00086C35 /* Interface.storyboard */; };
+		63222DB7241B1A4100086C35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63222DB6241B1A4100086C35 /* Assets.xcassets */; };
+		63222DBE241B1A4200086C35 /* WatchAutismLampApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 63222DBD241B1A4200086C35 /* WatchAutismLampApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		63222DC3241B1A4200086C35 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63222DC2241B1A4200086C35 /* ContentView.swift */; };
+		63222DC5241B1A4200086C35 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63222DC4241B1A4200086C35 /* HostingController.swift */; };
+		63222DC7241B1A4200086C35 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63222DC6241B1A4200086C35 /* ExtensionDelegate.swift */; };
+		63222DC9241B1A4200086C35 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63222DC8241B1A4200086C35 /* NotificationController.swift */; };
+		63222DCB241B1A4200086C35 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63222DCA241B1A4200086C35 /* NotificationView.swift */; };
+		63222DCD241B1A4400086C35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63222DCC241B1A4400086C35 /* Assets.xcassets */; };
+		63222DD0241B1A4400086C35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63222DCF241B1A4400086C35 /* Preview Assets.xcassets */; };
+		63222DD5241B1A4400086C35 /* WatchAutismLampApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 63222DB1241B1A3C00086C35 /* WatchAutismLampApp.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		63222DDF241B2B0000086C35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63DDE9C324155264003A407F /* Assets.xcassets */; };
+		63222DE2241C5CCC00086C35 /* BTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636C91A72415D9F7000350D2 /* BTService.swift */; };
+		63222DE9241D9BA200086C35 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63222DE8241D9BA200086C35 /* HealthKit.framework */; };
+		63222DEC241D9BD700086C35 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63222DEB241D9BD700086C35 /* HealthKit.framework */; };
 		636C91A82415D9F7000350D2 /* BTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636C91A72415D9F7000350D2 /* BTService.swift */; };
 		63DDE9BE24155261003A407F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DDE9BD24155261003A407F /* AppDelegate.swift */; };
 		63DDE9C024155261003A407F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DDE9BF24155261003A407F /* SceneDelegate.swift */; };
@@ -19,6 +34,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		63222DBF241B1A4200086C35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63DDE9B224155261003A407F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63222DBC241B1A4200086C35;
+			remoteInfo = "WatchAutismLampApp Extension";
+		};
+		63222DD3241B1A4400086C35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63DDE9B224155261003A407F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63222DB0241B1A3C00086C35;
+			remoteInfo = WatchAutismLampApp;
+		};
 		63DDE9D124155264003A407F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 63DDE9B224155261003A407F /* Project object */;
@@ -35,7 +64,50 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		63222DD6241B1A4400086C35 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				63222DD5241B1A4400086C35 /* WatchAutismLampApp.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63222DD9241B1A4400086C35 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				63222DBE241B1A4200086C35 /* WatchAutismLampApp Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		63222DB1241B1A3C00086C35 /* WatchAutismLampApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchAutismLampApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63222DB4241B1A3C00086C35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		63222DB6241B1A4100086C35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63222DB8241B1A4100086C35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63222DBD241B1A4200086C35 /* WatchAutismLampApp Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WatchAutismLampApp Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63222DC2241B1A4200086C35 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		63222DC4241B1A4200086C35 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		63222DC6241B1A4200086C35 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		63222DC8241B1A4200086C35 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		63222DCA241B1A4200086C35 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		63222DCC241B1A4400086C35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63222DCF241B1A4400086C35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		63222DD1241B1A4400086C35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63222DD2241B1A4400086C35 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		63222DE6241D9BA100086C35 /* AutismLampApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AutismLampApp.entitlements; sourceTree = "<group>"; };
+		63222DE8241D9BA200086C35 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		63222DEA241D9BD600086C35 /* WatchAutismLampApp Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WatchAutismLampApp Extension.entitlements"; sourceTree = "<group>"; };
+		63222DEB241D9BD700086C35 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		636C91A72415D9F7000350D2 /* BTService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTService.swift; sourceTree = "<group>"; };
 		63DDE9BA24155261003A407F /* AutismLampApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutismLampApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DDE9BD24155261003A407F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,10 +126,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		63222DBA241B1A4200086C35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63222DEC241D9BD700086C35 /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63DDE9B724155261003A407F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63222DE9241D9BA200086C35 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,13 +159,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63222DB2241B1A3C00086C35 /* WatchAutismLampApp */ = {
+			isa = PBXGroup;
+			children = (
+				63222DB3241B1A3C00086C35 /* Interface.storyboard */,
+				63222DB6241B1A4100086C35 /* Assets.xcassets */,
+				63222DB8241B1A4100086C35 /* Info.plist */,
+			);
+			path = WatchAutismLampApp;
+			sourceTree = "<group>";
+		};
+		63222DC1241B1A4200086C35 /* WatchAutismLampApp Extension */ = {
+			isa = PBXGroup;
+			children = (
+				63222DEA241D9BD600086C35 /* WatchAutismLampApp Extension.entitlements */,
+				63222DC2241B1A4200086C35 /* ContentView.swift */,
+				63222DC4241B1A4200086C35 /* HostingController.swift */,
+				63222DC6241B1A4200086C35 /* ExtensionDelegate.swift */,
+				63222DC8241B1A4200086C35 /* NotificationController.swift */,
+				63222DCA241B1A4200086C35 /* NotificationView.swift */,
+				63222DCC241B1A4400086C35 /* Assets.xcassets */,
+				63222DD1241B1A4400086C35 /* Info.plist */,
+				63222DD2241B1A4400086C35 /* PushNotificationPayload.apns */,
+				63222DCE241B1A4400086C35 /* Preview Content */,
+			);
+			path = "WatchAutismLampApp Extension";
+			sourceTree = "<group>";
+		};
+		63222DCE241B1A4400086C35 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				63222DCF241B1A4400086C35 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		63222DE7241D9BA200086C35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63222DEB241D9BD700086C35 /* HealthKit.framework */,
+				63222DE8241D9BA200086C35 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		63DDE9B124155261003A407F = {
 			isa = PBXGroup;
 			children = (
 				63DDE9BC24155261003A407F /* AutismLampApp */,
 				63DDE9D324155264003A407F /* AutismLampAppTests */,
 				63DDE9DE24155264003A407F /* AutismLampAppUITests */,
+				63222DB2241B1A3C00086C35 /* WatchAutismLampApp */,
+				63222DC1241B1A4200086C35 /* WatchAutismLampApp Extension */,
 				63DDE9BB24155261003A407F /* Products */,
+				63222DE7241D9BA200086C35 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +222,8 @@
 				63DDE9BA24155261003A407F /* AutismLampApp.app */,
 				63DDE9D024155264003A407F /* AutismLampAppTests.xctest */,
 				63DDE9DB24155264003A407F /* AutismLampAppUITests.xctest */,
+				63222DB1241B1A3C00086C35 /* WatchAutismLampApp.app */,
+				63222DBD241B1A4200086C35 /* WatchAutismLampApp Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,6 +231,7 @@
 		63DDE9BC24155261003A407F /* AutismLampApp */ = {
 			isa = PBXGroup;
 			children = (
+				63222DE6241D9BA100086C35 /* AutismLampApp.entitlements */,
 				63DDE9BD24155261003A407F /* AppDelegate.swift */,
 				63DDE9BF24155261003A407F /* SceneDelegate.swift */,
 				63DDE9C124155261003A407F /* ContentView.swift */,
@@ -142,6 +273,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		63222DB0241B1A3C00086C35 /* WatchAutismLampApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63222DDD241B1A4400086C35 /* Build configuration list for PBXNativeTarget "WatchAutismLampApp" */;
+			buildPhases = (
+				63222DAF241B1A3C00086C35 /* Resources */,
+				63222DD9241B1A4400086C35 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63222DC0241B1A4200086C35 /* PBXTargetDependency */,
+			);
+			name = WatchAutismLampApp;
+			productName = WatchAutismLampApp;
+			productReference = 63222DB1241B1A3C00086C35 /* WatchAutismLampApp.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		63222DBC241B1A4200086C35 /* WatchAutismLampApp Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63222DDC241B1A4400086C35 /* Build configuration list for PBXNativeTarget "WatchAutismLampApp Extension" */;
+			buildPhases = (
+				63222DB9241B1A4200086C35 /* Sources */,
+				63222DBA241B1A4200086C35 /* Frameworks */,
+				63222DBB241B1A4200086C35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WatchAutismLampApp Extension";
+			productName = "WatchAutismLampApp Extension";
+			productReference = 63222DBD241B1A4200086C35 /* WatchAutismLampApp Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		63DDE9B924155261003A407F /* AutismLampApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63DDE9E424155264003A407F /* Build configuration list for PBXNativeTarget "AutismLampApp" */;
@@ -149,10 +314,12 @@
 				63DDE9B624155261003A407F /* Sources */,
 				63DDE9B724155261003A407F /* Frameworks */,
 				63DDE9B824155261003A407F /* Resources */,
+				63222DD6241B1A4400086C35 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				63222DD4241B1A4400086C35 /* PBXTargetDependency */,
 			);
 			name = AutismLampApp;
 			productName = AutismLampApp;
@@ -205,6 +372,12 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "David Ionita";
 				TargetAttributes = {
+					63222DB0241B1A3C00086C35 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					63222DBC241B1A4200086C35 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
 					63DDE9B924155261003A407F = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -234,11 +407,32 @@
 				63DDE9B924155261003A407F /* AutismLampApp */,
 				63DDE9CF24155264003A407F /* AutismLampAppTests */,
 				63DDE9DA24155264003A407F /* AutismLampAppUITests */,
+				63222DB0241B1A3C00086C35 /* WatchAutismLampApp */,
+				63222DBC241B1A4200086C35 /* WatchAutismLampApp Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		63222DAF241B1A3C00086C35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63222DB7241B1A4100086C35 /* Assets.xcassets in Resources */,
+				63222DB5241B1A3C00086C35 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63222DBB241B1A4200086C35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63222DD0241B1A4400086C35 /* Preview Assets.xcassets in Resources */,
+				63222DDF241B2B0000086C35 /* Assets.xcassets in Resources */,
+				63222DCD241B1A4400086C35 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63DDE9B824155261003A407F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -266,6 +460,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		63222DB9241B1A4200086C35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63222DC5241B1A4200086C35 /* HostingController.swift in Sources */,
+				63222DC3241B1A4200086C35 /* ContentView.swift in Sources */,
+				63222DC9241B1A4200086C35 /* NotificationController.swift in Sources */,
+				63222DE2241C5CCC00086C35 /* BTService.swift in Sources */,
+				63222DC7241B1A4200086C35 /* ExtensionDelegate.swift in Sources */,
+				63222DCB241B1A4200086C35 /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63DDE9B624155261003A407F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -296,6 +503,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		63222DC0241B1A4200086C35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63222DBC241B1A4200086C35 /* WatchAutismLampApp Extension */;
+			targetProxy = 63222DBF241B1A4200086C35 /* PBXContainerItemProxy */;
+		};
+		63222DD4241B1A4400086C35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63222DB0241B1A3C00086C35 /* WatchAutismLampApp */;
+			targetProxy = 63222DD3241B1A4400086C35 /* PBXContainerItemProxy */;
+		};
 		63DDE9D224155264003A407F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 63DDE9B924155261003A407F /* AutismLampApp */;
@@ -309,6 +526,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		63222DB3241B1A3C00086C35 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63222DB4241B1A3C00086C35 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		63DDE9C824155264003A407F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -320,6 +545,94 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		63222DD7241B1A4400086C35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JE8ZN9BQRC;
+				IBSC_MODULE = WatchAutismLampApp_Extension;
+				INFOPLIST_FILE = WatchAutismLampApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = david.ionita.AutismLampApp.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		63222DD8241B1A4400086C35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JE8ZN9BQRC;
+				IBSC_MODULE = WatchAutismLampApp_Extension;
+				INFOPLIST_FILE = WatchAutismLampApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = david.ionita.AutismLampApp.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
+		63222DDA241B1A4400086C35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "WatchAutismLampApp Extension/WatchAutismLampApp Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchAutismLampApp Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = JE8ZN9BQRC;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "WatchAutismLampApp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = david.ionita.AutismLampApp.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		63222DDB241B1A4400086C35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "WatchAutismLampApp Extension/WatchAutismLampApp Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchAutismLampApp Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = JE8ZN9BQRC;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "WatchAutismLampApp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = david.ionita.AutismLampApp.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
 		63DDE9E224155264003A407F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -438,6 +751,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AutismLampApp/AutismLampApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"AutismLampApp/Preview Content\"";
 				DEVELOPMENT_TEAM = JE8ZN9BQRC;
@@ -458,6 +772,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AutismLampApp/AutismLampApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"AutismLampApp/Preview Content\"";
 				DEVELOPMENT_TEAM = JE8ZN9BQRC;
@@ -561,6 +876,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		63222DDC241B1A4400086C35 /* Build configuration list for PBXNativeTarget "WatchAutismLampApp Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63222DDA241B1A4400086C35 /* Debug */,
+				63222DDB241B1A4400086C35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63222DDD241B1A4400086C35 /* Build configuration list for PBXNativeTarget "WatchAutismLampApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63222DD7241B1A4400086C35 /* Debug */,
+				63222DD8241B1A4400086C35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		63DDE9B524155261003A407F /* Build configuration list for PBXProject "AutismLampApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

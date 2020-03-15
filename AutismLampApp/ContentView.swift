@@ -22,7 +22,7 @@ struct ActionData: Identifiable {
 }
 
 struct ContentView: View {
-    
+
     let actions = [
         ActionData(name: "Bathroom", color: Color.purple, letter: "e"),
         ActionData(name: "Hungry", color: Color.blue,letter: "f"),
@@ -47,6 +47,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
+            
             List {
                 HStack {
                     Text(self.btPaired ? "Paired" : "NOT Paired").foregroundColor(btPaired ? Color.green : Color.red)
@@ -99,7 +100,9 @@ struct ContentView: View {
                             }
                         }
                     }
-                }.onAppear { self.ble.startScanning() }
+                }.onAppear {
+                    self.ble.startScanning()
+                }
 
             }.listStyle(GroupedListStyle()).navigationBarTitle("Lamp Dashboard")
             
