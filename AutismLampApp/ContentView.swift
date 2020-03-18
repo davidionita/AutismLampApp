@@ -28,7 +28,7 @@ struct ContentView: View {
         ActionData(name: "Sleep", color: Color.blue, letter: "f"),
         ActionData(name: "Teacher", color: Color.green, letter: "h"),
         ActionData(name: "Thirsty", color: Color.primary, letter: "g"),
-        ActionData(name: "Danger Demo", color: Color.red, letter: "a")  // Alternative red and white
+        ActionData(name: "Danger Demo", color: Color.red, letter: "a")
     ]
     
     @State var activeAction = "No Action"

@@ -118,7 +118,6 @@ extension BLEManager: CBCentralManagerDelegate {
         self.peripherals.append(peripheral)
         
         if (peripheral.name == "SH-HC-08") {
-        //if (peripheral.name == "David’s MacBook Pro") {
             manager.connect(peripheral, options: nil)
         }
     }
@@ -193,7 +192,7 @@ extension BLEManager: CBPeripheralDelegate {
             if characteristic.properties.contains(.read) {
                 print("\(characteristic.uuid): properties contains .read")
                 peripheral.readValue(for: characteristic)
-                /// GET RID OFF
+
                 if (myCharacteristic == nil) { myCharacteristic = characteristic }
             }
             if characteristic.properties.contains(.notify) {
