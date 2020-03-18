@@ -9,10 +9,7 @@
 import SwiftUI
 import Combine
 import CoreBluetooth
-
-let heartRateServiceCBUUID = CBUUID(string: "0x180D")
-let heartRateMeasurementCharacteristicCBUUID = CBUUID(string: "2A37")
-let bodySensorLocationCharacteristicCBUUID = CBUUID(string: "2A38")
+import HealthKit
 
 struct ActionData: Identifiable {
     var id = UUID()
@@ -22,6 +19,11 @@ struct ActionData: Identifiable {
 }
 
 struct ContentView: View {
+    
+    var healthStore = HKHealthStore()
+    let heartRateQuantity = HKUnit(from: "count/min")
+    
+    @State var value = 0
     
     let actions = [
         ActionData(name: "Bathroom", color: Color.purple, letter: "e"),
@@ -66,6 +68,28 @@ struct ContentView: View {
                     }
                 }
             }
+            
+            HStack {
+                Spacer()
+                Button(action: {
+                    self.ble.writeValue(message: "a")
+                    self.activeAction = "Danger Demo"
+                }) {
+                    VStack {
+                        Image("Danger Demo").renderingMode(.original).resizable().scaledToFit().frame(width: 40, height: 40)
+                    }.padding().foregroundColor(.white).background(Color.red).cornerRadius(40)
+                }.accentColor(self.activeAction == "Danger Demo" ? Color.red : Color.secondary)
+                Spacer()
+                Button(action: {
+                    
+                }) {
+                    VStack {
+                        Text("\(value)").frame(width: 40, height: 40)
+                    }.padding().foregroundColor(.white).background(value <= 110 ? Color.green : Color.red).cornerRadius(10)
+                }.disabled(true)
+                Spacer()
+            }.padding(.bottom)
+            
             HStack {
                 Spacer()
                 Button(action: {
@@ -87,6 +111,7 @@ struct ContentView: View {
                 }.accentColor(self.activeAction == "Hungry" ? Color.blue : Color.secondary)
                 Spacer()
             }.padding(.bottom)
+            
             HStack {
                 Spacer()
                 Button(action: {
@@ -108,6 +133,7 @@ struct ContentView: View {
                 }.accentColor(self.activeAction == "Mom" ? Color.green : Color.secondary)
                 Spacer()
             }.padding(.bottom)
+            
             HStack {
                 Spacer()
                 Button(action: {
@@ -129,6 +155,7 @@ struct ContentView: View {
                 }.accentColor(self.activeAction == "Sleep" ? Color.blue : Color.secondary)
                 Spacer()
             }.padding(.bottom)
+            
             HStack {
                 Spacer()
                 Button(action: {
@@ -150,48 +177,68 @@ struct ContentView: View {
                 }.accentColor(self.activeAction == "Thirsty" ? Color.primary : Color.secondary)
                 Spacer()
             }.padding(.bottom)
-            HStack {
-                Button(action: {
-                    self.ble.writeValue(message: "a")
-                    self.activeAction = "Danger Demo"
-                }) {
-                    VStack {
-                        Image("Danger Demo").renderingMode(.original).resizable().scaledToFit().frame(width: 40, height: 40)
-                    }.padding().foregroundColor(.white).background(Color.red).cornerRadius(40)
-                }.accentColor(self.activeAction == "Danger Demo" ? Color.red : Color.secondary)
-            }.padding(.bottom)
+
             Text("Copyright © 2020 David Ionita. All rights reserved.").fontWeight(.light).font(.system(size: 10))
+        }.onAppear{ self.ble.startScanning()}.onAppear(perform: start)
+        
+    }
+    
+    func start() {
+        autorizeHealthKit()
+        startHeartRateQuery(quantityTypeIdentifier: .heartRate)
+    }
+    
+    func autorizeHealthKit() {
+        let healthKitTypes: Set = [
+        HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!]
+
+        healthStore.requestAuthorization(toShare: healthKitTypes, read: healthKitTypes) { _, _ in }
+    }
+    
+    func startHeartRateQuery(quantityTypeIdentifier: HKQuantityTypeIdentifier) {
+        
+        // 1
+        let devicePredicate = HKQuery.predicateForObjects(from: [HKDevice.local()])
+        // 2
+        let updateHandler: (HKAnchoredObjectQuery, [HKSample]?, [HKDeletedObject]?, HKQueryAnchor?, Error?) -> Void = {
+            query, samples, deletedObjects, queryAnchor, error in
+            
+            // 3
+        guard let samples = samples as? [HKQuantitySample] else {
+            return
         }
-        /*
-        List {
-            Section(header: Text("Action Panel"), footer: Text("Copyright © 2020 David Ionita. All rights reserved.")) {
-                    ForEach(actions) { ac in
-                    /// START HERE
-                        Button(action: {
-                            self.activeAction = ac.name
-                            self.activeColor = ac.color
-                            
-                            // Make BT call with character
-                                    // If Danger Demo, send b (red) and g (white)
-                            
-                            print(ac.letter)
-                            /// GET RID OF
-                            print(self.ble.theCharacteristic!.uuid)
-                            self.ble.writeValue(message: String(ac.letter))
+            
+        self.process(samples, type: quantityTypeIdentifier)
 
-                        }) {
-                            HStack { Image(ac.name).renderingMode(.original).resizable().scaledToFit().frame(width: 40, height: 40)
-                                
-                                Text(ac.name).foregroundColor(ac.color)
-                            }
-                        }
-                    /// END HERE
-                    }
-                }.onAppear { self.ble.startScanning() }
-
+        }
         
-        }*/
+        // 4
+        let query = HKAnchoredObjectQuery(type: HKObjectType.quantityType(forIdentifier: quantityTypeIdentifier)!, predicate: devicePredicate, anchor: nil, limit: HKObjectQueryNoLimit, resultsHandler: updateHandler)
         
+        query.updateHandler = updateHandler
+        
+        // 5
+        
+        healthStore.execute(query)
+    }
+    
+    func process(_ samples: [HKQuantitySample], type: HKQuantityTypeIdentifier) {
+        var lastHeartRate = 0.0
+        
+        for sample in samples {
+            if type == .heartRate {
+                lastHeartRate = sample.quantity.doubleValue(for: heartRateQuantity)
+            }
+            
+            self.value = Int(lastHeartRate)
+            if (self.value > 110) {
+                self.ble.writeValue(message: String("a"))
+            }
+        }
+        
+        if (self.value > 110) {
+            self.ble.writeValue(message: String("a"))
+        }
     }
 }
 

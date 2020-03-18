@@ -20,6 +20,12 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Our app uses bluetooth to find, connect and transfer data between different devices</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>We need access to your health data to read your heart rate</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Our app uses health data to monitor your heart rate</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>
